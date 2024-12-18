@@ -1,0 +1,1 @@
+kind load docker-image backend-app:latest

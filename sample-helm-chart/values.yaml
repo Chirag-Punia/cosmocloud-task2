@@ -2,7 +2,7 @@ replicaCount: 1
 
 backend:
   image: 
-    repository: {{backend-app | default error910/backend-app}}
+    repository: backend-app
     tag: latest
     pullPolicy: IfNotPresent
 

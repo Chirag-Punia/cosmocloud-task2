@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: backend-app
+      app: backend-app #
   replicas: {{ .Values.replicaCount | default 1 }}
   template:
     metadata:
@@ -14,10 +14,10 @@ spec:
     spec:
       containers:
       - name: backend
-        image: {{ .Values.backend.image.repository }}:{{ .Values.backend.image.tag }}
+        image: {{ .Values.backend.image.repository }}:{{ .Values.backend.image.tag }} #
         imagePullPolicy: {{ .Values.backend.image.pullPolicy }}
         ports:
         - containerPort: 8080
         env:
         - name: REDIS_URI
-          value: {{ .Values.backend.redisUri | default (printf "redis://%s-redis-svc:6379" .Release.Name) }}
+          value: {{  (printf "redis://%s-redis-svc:6379" .Release.Name) }}
