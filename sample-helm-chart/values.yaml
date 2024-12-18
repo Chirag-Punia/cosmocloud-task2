@@ -1,0 +1,13 @@
+replicaCount: 1
+
+backend:
+  image: 
+    repository: {{backend-app | default error910/backend-app}}
+    tag: latest
+    pullPolicy: IfNotPresent
+
+redis:
+  image:
+    repository: redis
+    tag: alpine
+    pullPolicy: IfNotPresent
